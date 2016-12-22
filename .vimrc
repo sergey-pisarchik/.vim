@@ -2,18 +2,19 @@ syntax enable           " enable syntax processing
 filetype indent on      " load filetype-specific indent files
 
 syntax on               " syntax highlighting
-colo desert
+colorscheme slate
 
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 au FileType lua setl sw=2 sts=2 et
 set expandtab           " tabs are spaces
-
+set listchars=tab:ᐉ➛,trail:~,extends:>,precedes:<,space:.
+set list
 set number              " show line numbers
 set showcmd             " show (partial) command in status line
 set ruler	        	" show the cursor position all the time
 set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
+set nocursorline        " highlight current line - если включить будут пролемы с подсветкой пробелов в текущей строке.
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered

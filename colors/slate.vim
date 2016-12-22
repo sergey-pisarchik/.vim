@@ -21,7 +21,7 @@ let colors_name = "slate"
 :hi NonText guifg=RoyalBlue guibg=grey15 cterm=bold ctermfg=blue
 :hi Question guifg=springgreen ctermfg=green
 :hi Search guibg=peru guifg=wheat cterm=none ctermfg=grey ctermbg=blue
-:hi SpecialKey guifg=yellowgreen ctermfg=darkgreen
+:hi SpecialKey guifg=yellowgreen ctermfg=darkgrey
 :hi StatusLine guibg=#c2bfa5 guifg=black gui=none cterm=bold,reverse
 :hi StatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Title guifg=gold gui=bold cterm=bold ctermfg=yellow
