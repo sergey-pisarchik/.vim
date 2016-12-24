@@ -8,7 +8,7 @@ set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 au FileType lua setl sw=2 sts=2 et
 set expandtab           " tabs are spaces
-set listchars=tab:ᐉ➛,trail:~,extends:>,precedes:<,space:.
+set listchars=tab:ᐉ➛,trail:.,extends:.,precedes:.,space:.
 set list
 set number              " show line numbers
 set showcmd             " show (partial) command in status line
