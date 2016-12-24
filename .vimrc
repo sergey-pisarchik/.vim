@@ -35,10 +35,6 @@ set autowrite
 
 set nocompatible              " be iMproved, required
 
-filetype off                  " required
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 "filetype on                             " Включаем распознавание типов файлов и типо-специфичные плагины
@@ -265,6 +261,10 @@ endif
 
 
 
+filetype off                  " required
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 filetype plugin on
