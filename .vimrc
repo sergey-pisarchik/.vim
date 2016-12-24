@@ -137,7 +137,7 @@ if argc() == 0
 endif
 autocmd VimEnter * NERDTreeTabsToggle
 autocmd VimEnter * wincmd l
-autocmd VimEnter * :source ~/.vimrc 
+"autocmd VimEnter * :source ~/.vimrc 
 autocmd VimEnter * NERDTreeFind
 autocmd VimEnter * wincmd l
 
