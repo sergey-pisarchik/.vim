@@ -21,6 +21,7 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set hidden              " Возможность переключаться(?) при несохраненных изменениях
 set noswapfile
+set nowrap
 set wildmode=longest:list
 "set clipboard=unnamed
 "set wildcharm=<C-z>
