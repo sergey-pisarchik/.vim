@@ -165,6 +165,7 @@ map <S-j> 13j
 map <S-k> 13k
 
 map <F7> :BufOnly<CR>
+imap <F10> <Esc> :qa<CR>
 map <F10> :qa<CR>
 map <ESC><ESC> : nohlsearch<CR>
 map <F3> :bp<cr>
@@ -368,11 +369,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "previous MRU buffer there.
 
  "автодополнение - обязательно попробовать
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_goto_buffer_command = 'new-tab'
-"let g:ycm_always_populate_location_list = 1 "let g:ycm_error_symbol = '>'
-"let g:ycm_warning_symbol = '!'
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_goto_buffer_command = 'new-tab'
+let g:ycm_always_populate_location_list = 1 "let g:ycm_error_symbol = '>'
+let g:ycm_warning_symbol = '!'
 
 " C++ highlight
 "Plugin 'octol/vim-cpp-enhanced-highlight'
