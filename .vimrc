@@ -37,7 +37,6 @@ set autowrite
 set nocompatible              " be iMproved, required
 
 
-
 "filetype on                             " Включаем распознавание типов файлов и типо-специфичные плагины
 "filetype plugin on
 "filetype indent on
@@ -151,8 +150,10 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "search and replace
-vnoremap <leader><leader> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <leader><leader> "hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
 vnoremap // y/<C-R>"<CR>
+nnoremap <leader><leader> viw"hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
+nnoremap // viwyk/<C-R>"<CR>
 
 if bufwinnr(1)
   noremap <Up> <C-W>-
@@ -169,7 +170,9 @@ imap <F10> <Esc> :qa<CR>
 map <F10> :qa<CR>
 map <ESC><ESC> : nohlsearch<CR>
 map <F3> :bp<cr>
+imap <F3> <Esc> :bp <cr>
 map <F4> :bn<cr>
+imap <F4> <Esc> :bn<cr>
 map <CR> o<esc>
 "map <F5> :w<CR> :!sh -xc "cd '%:p:h' && th '%:t'"<CR>
 autocmd FileType nerdtree map <buffer> <F3> <nop>
@@ -229,6 +232,7 @@ syntax enable
 
 " Выход из режима редактирования по jj
 inoremap jj <Esc>l
+cnoremap jj <CR> 
 
 " Сохранить файл
 imap <F2> <Esc><F2>a
