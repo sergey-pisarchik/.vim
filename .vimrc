@@ -35,6 +35,30 @@ set autoread
 set autowrite
 
 set nocompatible              " be iMproved, required
+"Код убирающий лишние табы при вставке из буфера
+"========================
+if !exists("g:bracketed_paste_tmux_wrap")
+    let g:bracketed_paste_tmux_wrap = 1
+endif
+
+let &t_ti .= "\<Esc>[?2004h"
+let &t_te .= "\<Esc>[?2004l"
+
+function! XTermPasteBegin(ret)
+    set pastetoggle=<f29>
+    set paste
+    return a:ret
+endfunction
+
+execute "set <f28>=\<Esc>[200~"
+execute "set <f29>=\<Esc>[201~"
+map <expr> <f28> XTermPasteBegin("i")
+imap <expr> <f28> XTermPasteBegin("")
+vmap <expr> <f28> XTermPasteBegin("c")
+cmap <f28> <nop>
+cmap <f29> <nop>
+"========================
+
 
 
 "filetype on                             " Включаем распознавание типов файлов и типо-специфичные плагины
@@ -150,6 +174,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "search and replace
+"Ищем с текущей до конца. Потом повторяем (<bar> == |) поиск (&&) с первой до предыдущей (""-)
+"и в конце смещаем курсор в позицию для ввода замены
 vnoremap <leader><leader> "hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
 vnoremap // y/<C-R>"<CR>
 nnoremap <leader><leader> viw"hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
@@ -306,6 +332,10 @@ let g:NERDTreeWinPos = "left"
 "navigate to file in nerd tree
 map <leader>r :NERDTreeFind<cr>zz
 autocmd FileType nerdtree nmap <buffer> <CR> go
+
+
+" for tags from https://habrahabr.ru/post/265635/ 
+Plugin 'szw/vim-tags'
 
 " for spellcheck, i think this disable default and enable when need
 "Plugin 'scrooloose/syntastic'
