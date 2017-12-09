@@ -1,17 +1,11 @@
 
-syntax enable           " enable syntax processing
 filetype indent on      " load filetype-specific indent files
 
-syntax on               " syntax highlighting
-colorscheme slate
 
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 au FileType lua setl sw=2 sts=2 et
-set expandtab           " tabs are spaces
-set listchars=tab:ᐉ➛,trail:.,extends:.,precedes:.,space:.
-set list
-set number              " show line numbers
+
 set showcmd             " show (partial) command in status line
 set ruler	        	" show the cursor position all the time
 set showcmd             " show command in bottom bar
@@ -169,34 +163,11 @@ autocmd VimEnter * wincmd l
 autocmd VimLeave * NERDTreeTabsClose
 autocmd VimLeave * :mksession! ~/tmp/session.vim
 
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
-"search and replace
-"Ищем с текущей до конца. Потом повторяем (<bar> == |) поиск (&&) с первой до предыдущей (""-)
-"и в конце смещаем курсор в позицию для ввода замены
-vnoremap <leader><leader> "hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
-vnoremap // y/<C-R>"<CR>
-nnoremap <leader><leader> viw"hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><left><left><left><left><left><left><left><left>
-nnoremap // viwyk/<C-R>"<CR>
 
-if bufwinnr(1)
-  noremap <Up> <C-W>-
-  noremap <Down> <C-W>+
-  noremap <Left> <C-W>>
-  noremap <Right> <C-W><
-endif
 
-map <S-j> 13j
-map <S-k> 13k
 
 map <F7> :BufOnly<CR>
-imap <F10> <Esc> :qa<CR>
-map <F10> :qa<CR>
-map <ESC><ESC> : nohlsearch<CR>
-map <CR> o<esc>
 "map <F5> :w<CR> :!sh -xc "cd '%:p:h' && th '%:t'"<CR>
 autocmd FileType nerdtree map <buffer> <F3> <nop>
 autocmd FileType nerdtree map <buffer> <F4> <nop>
@@ -252,14 +223,6 @@ syntax enable
 "nmap j gj
 "nmap k gk
 
-
-" Выход из режима редактирования по jj
-inoremap jj <Esc>l
-cnoremap jj <CR> 
-
-" Сохранить файл
-imap <F2> <Esc><F2>a
-map <F2> :w<CR>
 
 " Повторить последнюю команду
 imap <F5> <Esc><F5>
