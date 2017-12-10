@@ -42,7 +42,7 @@ imap <F4> <Esc> :bn<cr>
 imap <F5> <Esc><F5>
 map <F5> :w<CR>:!!<CR>
 "Close other tabs
-source BufOnly.vim
+source ~/.vim/BufOnly.vim
 map <F7> :BufOnly<CR>
 "Close vim
 imap <F10> <Esc> :qa<CR>
@@ -50,7 +50,7 @@ map <F10> :qa<CR>
 map <ESC><ESC> : nohlsearch<CR>
 map <CR> o<esc>
 
-source BClose.vim
+source ~/.vim/BClose.vim
 nnoremap <C-c> :Bclose<CR>
 autocmd FileType nerdtree map <buffer> <C-c> <nop>
 
