@@ -39,7 +39,7 @@ if has('mouse')
   set mouse=a
 endif
 "===========================================================
-"Initialization of sesstion
+"Initialization of session
 "===========================================================
 
 "Reread saved session
@@ -72,8 +72,3 @@ if version >= 700
     set undolevels=1000
     set undoreload=10000
 endif
-
-
-
-
-
