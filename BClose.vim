@@ -52,8 +52,9 @@ function! s:Bclose(bang, buffer)
   execute wcurrent.'wincmd w'
 endfunction
 
-"PSP - Commented next 2 lines - don't know what they do
-"command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
+"похоже тут происходит регистрация функции Bclose в списке команд
+command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
+"PSP - Commented next line - don't know what it do
 "nnoremap <silent> <Leader>bd :Bclose<CR>
 
 " ===================================================

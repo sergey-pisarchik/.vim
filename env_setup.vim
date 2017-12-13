@@ -65,10 +65,11 @@ autocmd VimLeave * :mksession! ~/tmp/session.vim
 "редактор, но открыв заново какой-либо файл, история Ваших изменений 
 "восстановится.
 if version >= 700
-    execute ':silent !mkdir -p ~/.vim/undodir/'
-    set history=64
-    set undolevels=128
-    set undodir=~/.vim/undodir/
-    set undolevels=1000
-    set undoreload=10000
+  execute ':silent !mkdir -p ~/.vim/undodir/'
+  set history=64
+  set undolevels=128
+  set undodir=$HOME/.vim/undodir
+  set undolevels=1000
+  set undoreload=10000
+  set undofile
 endif

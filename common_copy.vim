@@ -132,13 +132,6 @@ set laststatus=2
 
 "map <F5> :w<CR> :!sh -xc "cd '%:p:h' && th '%:t'"<CR>
 
-" move lines up and down
-nnoremap <c-j> :m .+1<cr>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 
 

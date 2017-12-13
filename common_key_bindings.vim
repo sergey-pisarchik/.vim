@@ -3,9 +3,16 @@
 inoremap jj <Esc>l
 cnoremap jj <CR> 
 
-map <C-j> 13j
-map <C-k> 13k
+map <S-j> 13j
+map <S-k> 13k
 
+" move lines up and down
+nnoremap <c-j> :m .+1<cr>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -13,8 +20,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 "move the windows with keys
 if bufwinnr(1)
-  noremap <Up> <C-W>-
-  noremap <Down> <C-W>+
+  "noremap <Up> <C-W>-
+  "noremap <Down> <C-W>+
   noremap <Left> <C-W>>
   noremap <Right> <C-W><
 endif
@@ -42,7 +49,7 @@ imap <F4> <Esc> :bn<cr>
 imap <F5> <Esc><F5>
 map <F5> :w<CR>:!!<CR>
 "Close other tabs
-source ~/.vim/BufOnly.vim
+source $HOME/.vim/BufOnly.vim
 map <F7> :BufOnly<CR>
 "Close vim
 imap <F10> <Esc> :qa<CR>
@@ -50,7 +57,7 @@ map <F10> :qa<CR>
 map <ESC><ESC> : nohlsearch<CR>
 map <CR> o<esc>
 
-source ~/.vim/BClose.vim
+source $HOME/.vim/BClose.vim
 nnoremap <C-c> :Bclose<CR>
 autocmd FileType nerdtree map <buffer> <C-c> <nop>
 
