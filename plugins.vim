@@ -78,10 +78,14 @@ autocmd FileType nerdtree nmap <buffer> <CR> go
 
 " Status line
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 " https://github.com/Lokaltog/powerline-fonts - Еще одна статус строка- вроде
 " прикльная. Можно попробовать.

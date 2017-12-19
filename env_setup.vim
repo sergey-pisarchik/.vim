@@ -1,6 +1,7 @@
 syntax enable           " enable syntax processing
 syntax on               " syntax highlighting
 colorscheme slate
+set t_Co=256            " Без этого не работают некоторые цвета
 set expandtab           " tabs are spaces
 set listchars=tab:ᐉ➛,trail:.,extends:.,precedes:.,space:.
 set list
@@ -52,9 +53,13 @@ autocmd VimEnter * NERDTreeTabsToggle
 autocmd VimEnter * wincmd l
 autocmd VimEnter * NERDTreeFind
 autocmd VimEnter * wincmd l
+autocmd VimEnter * AirlineTheme dark "Почему-то нужно каждый раз в начале вызывать 
+"установку темы. Иначе не подсвечиваются закладки
+
 
 autocmd VimLeave * NERDTreeTabsClose
 autocmd VimLeave * :mksession! ~/tmp/session.vim
+
 
 "Данный кусок кода включает весьма полезные возможности, доступные начиная 
 "с версии 7.00: после того, как вы закрываете редактор(а если точнее, то
@@ -73,3 +78,4 @@ if version >= 700
   set undoreload=10000
   set undofile
 endif
+
