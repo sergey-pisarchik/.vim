@@ -1,4 +1,5 @@
 syntax enable           " enable syntax processing
+set encoding=utf-8
 syntax on               " syntax highlighting
 colorscheme slate
 set t_Co=256            " Без этого не работают некоторые цвета
