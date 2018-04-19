@@ -4,6 +4,11 @@ syntax on               " syntax highlighting
 colorscheme slate
 set t_Co=256            " Без этого не работают некоторые цвета
 set expandtab           " tabs are spaces
+"set verbosefile=~/vim_verbose.txt
+"set verbose=15
+set tabstop=2           " number of visual spaces per TAB
+set softtabstop=2       " number of spaces in tab when editing
+filetype plugin indent on "enable indentation based on filetype. Files stored in .vim/after/ftplugin/*.vim
 set listchars=tab:ᐉ➛,trail:.,extends:.,precedes:.,space:.
 set list
 set number              " show line numbers
@@ -29,6 +34,7 @@ set dy=lastline
 "Make backspace work like most other programs
 set backspace=2 
 set backspace=indent,eol,start
+set completeopt-=preview
 " yank to clipboard
 if has("clipboard")
   set clipboard=unnamed " copy to the system clipboard
