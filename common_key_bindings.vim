@@ -1,7 +1,7 @@
 
 " Выход из режима редактирования по jj
 inoremap jj <Esc>l
-cnoremap jj <CR> 
+cnoremap jj <CR>
 
 map <S-j> 13j
 map <S-k> 13k
@@ -35,27 +35,50 @@ nnoremap <leader><leader> viw"hy:,$s/<C-r>h//gc<bar>1,''-&&<left><left><left><le
 nnoremap // viwyk/<C-R>"<CR>
 
 " Сохранить файл
+function SaveRestorePos ()
+  let save_cursor = getpos(".")
+  write
+  call setpos('.', save_cursor)
+endfunction
+command SaveRestorePos call SaveRestorePos ()
+" Без прыжка на ошибку
 imap <F2> <Esc><F2>a
-map <F2> :w<CR>
+map <F2> :SaveRestorePos<CR>
+
+" С прыжком на ошибку
+imap <F8> <Esc><F8>a
+map <F8> :w<CR>
+
+
 "Next tab
-map <F3> :bp<cr>
-imap <F3> <Esc> :bp <cr>
+imap <F3> <Esc> :bp <cr>:if &buftype ==# 'quickfix'<Bar>:bp<Bar>endif<CR>
+map <F3> :bp<cr>:if &buftype ==# 'quickfix'<Bar>:bp<Bar>endif<CR>
+
+
 autocmd FileType nerdtree map <buffer> <F3> <nop>
 autocmd FileType nerdtree map <buffer> <F4> <nop>
 "Prew tab
-map <F4> :bn<cr>
-imap <F4> <Esc> :bn<cr>
+map <F4> :bn<cr>:if &buftype ==# 'quickfix'<Bar>:bn<Bar>endif<CR>
+imap <F4> <Esc> :bn<cr>:if &buftype ==# 'quickfix'<Bar>:bn<Bar>endif<CR>
+
+
 " Повторить последнюю команду
 imap <F5> <Esc><F5>
 map <F5> :w<CR>:!!<CR>
 "Close other tabs
 source $HOME/.vim/BufOnly.vim
+map <F6> :copen<CR><C-W>k
 map <F7> :BufOnly<CR>
 "Close vim
 imap <F10> <Esc> :qa<CR>
 map <F10> :qa<CR>
 map <ESC><ESC> : nohlsearch<CR>
 map <CR> o<esc>
+map <F9> :Fiximports<CR>:FormatCode<CR>
+" Output the current syntax group
+nnoremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 source $HOME/.vim/BClose.vim
 nnoremap <C-c> :Bclose<CR>

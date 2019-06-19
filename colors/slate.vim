@@ -1,6 +1,26 @@
 "%% SiSU Vim color file
 " Slate Maintainer: Ralph Amissah <ralph@amissah.com>
 " (originally looked at desert Hans Fugal <hans@fugal.net> http://hans.fugal.net/vim/colors/desert.vim (2003/05/06)
+"NR-16   NR-8    COLOR NAME 
+"0       0       Black
+"1       4       DarkBlue
+"2       2       DarkGreen
+"3       6       DarkCyan
+"4       1       DarkRed
+"5       5       DarkMagenta
+"6       3       Brown, DarkYellow
+"7       7       LightGray, LightGrey, Gray, Grey
+"8       0*      DarkGray, DarkGrey
+"9       4*      Blue, LightBlue
+"10      2*      Green, LightGreen
+"11      6*      Cyan, LightCyan
+"12      1*      Red, LightRed
+"13      5*      Magenta, LightMagenta
+"14      3*      Yellow, LightYellow
+"15      7*      White
+"
+"
+"
 :set background=dark
 :highlight clear
 if version > 580
@@ -20,7 +40,7 @@ let colors_name = "slate"
 :hi MoreMsg guifg=SeaGreen ctermfg=darkgreen
 :hi NonText guifg=RoyalBlue guibg=grey15 cterm=bold ctermfg=blue
 :hi Question guifg=springgreen ctermfg=green
-:hi Search guibg=peru guifg=wheat cterm=none ctermfg=grey ctermbg=blue
+:hi Search guibg=peru guifg=wheat cterm=none ctermfg=yellow ctermbg=Darkblue
 :hi SpecialKey guifg=yellowgreen ctermfg=darkgrey
 :hi StatusLine guibg=#c2bfa5 guifg=black gui=none cterm=bold,reverse
 :hi StatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
@@ -54,3 +74,4 @@ let colors_name = "slate"
 :hi Underlined cterm=underline ctermfg=5
 :hi Error guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
 :hi SpellErrors guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
+:hi SpellBad ctermbg=black ctermfg=Yellow cterm=bold
